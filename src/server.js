@@ -1,9 +1,12 @@
 const express = require('express');
 const fs = require("fs");
+const cors = require("cors");
 const app = express();
 
 const PORT = 8080;
 app.use(express.text());
+app.use(cors());
+console.log("CORS middleware loaded");
 
 app.get("/", (req,res)=>{
     res.send("Crownlabs test server");
